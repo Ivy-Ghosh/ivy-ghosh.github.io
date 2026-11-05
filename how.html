@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How to use: Quant-Crosschecker</title>
+<meta name="description" content="How to write your steps so Quant-Crosschecker can check them, and what it can and can't do.">
+<meta name="theme-color" content="#0E0C0A">
+<meta property="og:title" content="How to use: Quant-Crosschecker">
+<meta property="og:description" content="How to write your steps so Quant-Crosschecker can check them, and what it can and can't do.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23E8DCC6'/%3E%3Cpath d='M8 17l5 5L24 10' fill='none' stroke='%237A4A28' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Schibsted+Grotesk:wght@400;700;800&display=swap">
+<link rel="stylesheet" href="./styles.css">
+</head>
+<body data-page="how">
+<header class="site-header">
+  <div class="wrap">
+    <a class="wordmark" href="./index.html">
+      <svg width="24" height="24" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" fill="#E8DCC6"/><path d="M8 17l5 5L24 10" fill="none" stroke="#7A4A28" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Quant-Crosschecker
+    </a>
+    <nav class="site-nav" aria-label="Main">
+      <ul>
+        <li><a href="index.html">About</a></li>
+        <li><a href="how.html">How to use</a></li>
+        <li><a href="context.html">Context</a></li>
+        <li><a href="check.html">Check work</a></li>
+        <li><a href="profile.html">Profile</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<main class="wrap">
+  <div class="page-title">
+    <h1>How to use it</h1>
+    <p>Five steps, about a minute the first time.</p>
+  </div>
+
+  <section class="section" aria-labelledby="steps-title">
+    <h2 id="steps-title" class="visually-hidden">Steps</h2>
+    <ol class="steps">
+      <li><div><h3>Tell it where your class is</h3><p>On <a href="context.html">Context</a>, pick your course and tick the topics you've covered. Problems you haven't reached are marked "not covered yet".</p></div></li>
+      <li><div><h3>Pick a problem</h3><p>On <a href="check.html">Check work</a>, choose a practice problem or "My own problem". Got a photo of your page? Open "Upload a page" to keep it beside you while you type.</p></div></li>
+      <li><div><h3>Write one step per line</h3><p>Press Enter for a new line. Copy your own steps, mistakes and all. That's the point.</p></div></li>
+      <li><div><h3>Press Check my work</h3><p>A line sweeps down your page. Lines that follow get a tick. The first one that doesn't gets a note in the margin: what went wrong, why, and what to try next.</p></div></li>
+      <li><div><h3>Say how it landed</h3><p>"I get it now" logs it on your <a href="profile.html">Profile</a>. "Still stuck" gives a smaller hint. Press it again on a practice problem to unlock the worked solution.</p></div></li>
+    </ol>
+  </section>
+
+  <section class="section" aria-labelledby="syntax-title">
+    <h2 id="syntax-title">Writing math it can read</h2>
+    <table class="syntax">
+      <thead><tr><th scope="col">You want</th><th scope="col">Type</th></tr></thead>
+      <tbody>
+        <tr><td>Multiply</td><td><code>3*x</code>, <code>3x</code> or <code>3(x - 4)</code></td></tr>
+        <tr><td>Powers</td><td><code>q^2</code> (or <code>q²</code>)</td></tr>
+        <tr><td>Divide</td><td><code>(80 - 100)/90</code>, with brackets around the top and bottom</td></tr>
+        <tr><td>An equation</td><td><code>x - 12 = 5</code>, one = per line</td></tr>
+        <tr><td>A label</td><td><code>MC = 4q + 5</code> or <code>E(X) = 15</code> is fine on calculation problems</td></tr>
+        <tr><td>Keep going on one line</td><td><code>10 + 5 = 15</code> on a calculation checks both steps</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="section prose" aria-labelledby="how-title">
+    <h2 id="how-title">How the checking works</h2>
+    <p>It doesn't guess and it doesn't use AI. It plugs numbers into your line and the line before it, using the math.js library. If two expressions agree at a dozen random values, the step holds. Two equations hold if they keep the same solution.</p>
+    <p><strong>So it's precise about whether a step follows, but not about why.</strong> The "why" on practice problems is written by hand. On your own problems it describes what it measured, for example "line 3 is off by 12 from the line before it".</p>
+    <p>It can't read words, graphs or proofs. It can't read an uploaded page by itself either: that would need an AI model running on a server, which this laptop version doesn't have.</p>
+  </section>
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <p>Quant-Crosschecker is a class project for RESECON 490AI, Fall 2026.</p>
+    <p>Demo data: the courses, problems and nickname are invented. Your work stays in this browser and is never sent anywhere.</p>
+  </div>
+</footer>
+<script src="./data.js"></script>
+<script src="./store.js"></script>
+<script src="./app.js"></script>
+</body>
+</html>

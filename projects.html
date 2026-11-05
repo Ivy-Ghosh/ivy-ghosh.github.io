@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Projects · Ivy Ghosh</title>
+<meta name="description" content="Projects by Ivy Ghosh: AI and the future of U.S. colleges and universities (NAICS 611310), Quant-Crosschecker, and a trust-game experiment.">
+<meta name="theme-color" content="#FAFBF8">
+<meta property="og:title" content="Projects · Ivy Ghosh">
+<meta property="og:description" content="AI and the future of U.S. colleges and universities, plus class builds and research.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='4' fill='%23FAFBF8'/%3E%3Cpath d='M8 0v32M16 0v32M24 0v32M0 8h32M0 16h32M0 24h32' stroke='%23DCE5EC'/%3E%3Cpath d='M5 24 L12 17 L18 20 L27 9' fill='none' stroke='%230E6E6A' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Klee+One:wght@400;600&family=Zen+Kaku+Gothic+New:wght@400;700&display=swap">
+<link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="notebook">
+  <header class="tabs">
+    <a class="brand" href="./index.html">Ivy Ghosh</a>
+    <nav aria-label="Pages">
+      <ul>
+        <li><a href="./index.html">Home</a></li>
+        <li><a href="./about.html">About</a></li>
+        <li><a href="./projects.html" aria-current="page">Projects</a></li>
+        <li><a href="./resume.html">Résumé</a></li>
+        <li><a href="./contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main" class="page">
+    <h1>Projects</h1>
+
+    <!-- ===== Project 1: the RESECON 490AI final project ===== -->
+    <article class="project spread" id="ai-colleges" aria-labelledby="p1">
+      <div>
+        <h2 id="p1">AI and the future of U.S. colleges</h2>
+        <dl class="facts">
+          <dt>Industry</dt><dd>Colleges, Universities, and Professional Schools</dd>
+          <dt>NAICS</dt><dd class="num">611310 (2022 NAICS, U.S. Census Bureau)</dd>
+          <dt>Scope</dt><dd>United States</dd>
+          <dt>Course</dt><dd>RESECON 490AI, Dr. Christian Rojas, Fall 2026</dd>
+        </dl>
+        <p class="quiet">Census definition: “establishments primarily engaged in furnishing academic courses and granting degrees at baccalaureate or graduate levels.” Community colleges (611210) are a separate industry.</p>
+
+        <!-- DRAFT: Ivy writes the 150–250 word summary. Nothing here is in her voice yet. -->
+        <div class="draft" role="note" aria-label="Draft text">
+          <span class="draft-tag">Draft: Ivy to write</span>
+          <p><strong>Project summary, 150–250 words.</strong> The handout asks for: the industry and why it matters to me, what the data shows, how generative AI is changing teaching and assessment, and where I fit.</p>
+          <p class="quiet">From my interview: as a math UGTA I have watched courses shift toward understanding concepts, questions AI can’t always solve, and proctored pen-and-paper exams.</p>
+        </div>
+
+        <h3>Research questions (first draft, Oct 15)</h3>
+        <ul class="rows">
+          <li>How are U.S. colleges changing assessment (exams, assignments, AI-use policies) in response to generative AI?</li>
+          <li>How widely do students and faculty use generative AI, and for what?</li>
+          <li>Is the industry growing, stable or shrinking, and what life-cycle stage is it in?</li>
+          <li>How might generative AI change roles: instructors, TAs, tutors, instructional technology staff?</li>
+          <li>Does the way a course handles AI affect how students see the course and how they perform?</li>
+        </ul>
+
+        <h3>Report, slides and charts</h3>
+        <ul class="links">
+          <li><span>Industry report (PDF)</span><span class="pending">Posting by Dec 3</span></li>
+          <li><span>Presentation slides</span><span class="pending">Posting by Dec 8</span></li>
+          <li><a href="./index.html#chart-section">Chart: U.S. college jobs, public vs. private, 2014–2025</a><span class="pending">Live now</span></li>
+          <li><a href="https://www.bls.gov/cew/" rel="noopener">Data: BLS Quarterly Census of Employment and Wages</a><span class="pending">bls.gov</span></li>
+          <li><a href="./data.js">Data used in the chart (12 years, U.S. totals)</a><span class="pending">data.js</span></li>
+        </ul>
+      </div>
+      <aside>
+        <p class="note">Picked over two runners-up: <b>stationery</b> and <b>tutoring &amp; test prep</b>. Colleges had the clearest, best-documented GenAI story.</p>
+      </aside>
+    </article>
+
+    <!-- ===== Project 2: the class website build ===== -->
+    <article class="project spread" id="crosschecker" aria-labelledby="p2">
+      <div>
+        <h2 id="p2">Quant-Crosschecker</h2>
+        <p>A study tool for math, stats and econ problems. You type your steps one per line, and it finds the first line that doesn’t follow from the one before. The checking is real arithmetic and algebra (math.js), not scripted. The courses and practice problems are demo content.</p>
+        <p><a class="action" href="./crosschecker/index.html">Open Quant-Crosschecker</a></p>
+      </div>
+      <aside>
+        <p class="note">Built in class on <b>Oct 27</b> with Claude Code.</p>
+      </aside>
+    </article>
+
+    <!-- ===== Project 3: Experimental Economics paper ===== -->
+    <article class="project spread" id="trust-game" aria-labelledby="p3">
+      <div>
+        <h2 id="p3">Trust, reciprocity and perceived gender</h2>
+        <p>Final research paper for Experimental Economics: an experimental design for a trust game, studying whether people trust and reciprocate differently depending on the perceived gender of their partner. Data were simulated. Written and presented as a group project.</p>
+        <p class="quiet">Paper not posted online.</p>
+      </div>
+      <aside></aside>
+    </article>
+  </main>
+</div>
+
+<footer class="foot">
+  <p>Ivy Ghosh · RESECON 490AI (AI in Economics), UMass Amherst, Fall 2026.</p>
+  <p>Site code written with Claude Code (Anthropic) at Ivy’s direction. Words marked “Draft” are still being rewritten by Ivy.</p>
+</footer>
+</body>
+</html>
