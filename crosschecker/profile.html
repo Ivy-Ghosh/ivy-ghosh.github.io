@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Profile: Quant-Crosschecker</title>
+<meta name="description" content="Your nickname, your course and your check history. No login: it lives in this browser.">
+<meta name="theme-color" content="#0E0C0A">
+<meta property="og:title" content="Profile: Quant-Crosschecker">
+<meta property="og:description" content="Your nickname, your course and your check history. No login: it lives in this browser.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23E8DCC6'/%3E%3Cpath d='M8 17l5 5L24 10' fill='none' stroke='%237A4A28' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Schibsted+Grotesk:wght@400;700;800&display=swap">
+<link rel="stylesheet" href="./styles.css">
+</head>
+<body data-page="profile">
+<header class="site-header">
+  <div class="wrap">
+    <a class="wordmark" href="./index.html">
+      <svg width="24" height="24" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" fill="#E8DCC6"/><path d="M8 17l5 5L24 10" fill="none" stroke="#7A4A28" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Quant-Crosschecker
+    </a>
+    <nav class="site-nav" aria-label="Main">
+      <ul>
+        <li><a href="index.html">About</a></li>
+        <li><a href="how.html">How to use</a></li>
+        <li><a href="context.html">Context</a></li>
+        <li><a href="check.html">Check work</a></li>
+        <li><a href="profile.html">Profile</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<main class="wrap">
+  <div class="page-title">
+    <h1>Your profile</h1>
+    <p>No login, no real name. It lives in this browser only.</p>
+  </div>
+  <section class="section" aria-labelledby="nick-title" style="max-width:32rem">
+    <h2 id="nick-title">Nickname</h2>
+    <form id="aliasForm" class="btn-row" style="align-items:end">
+      <div class="field" style="flex:1 1 14rem;margin:0">
+        <label for="alias">Shown only to you</label>
+        <input class="text-input" id="alias" maxlength="40" autocomplete="off">
+      </div>
+      <button class="btn btn-primary" type="submit">Save nickname</button>
+    </form>
+  </section>
+  <section class="section" aria-labelledby="course-title">
+    <h2 id="course-title">Course</h2>
+    <p class="prose" id="courseSummary"></p>
+  </section>
+  <section class="section" aria-labelledby="hist-title">
+    <h2 id="hist-title">Your checks</h2>
+    <p class="summary" id="summary" hidden></p>
+    <p class="empty" id="historyEmpty">No checks yet. Your first one will show up here. <a href="check.html">Check a page</a></p>
+    <ol class="history" id="history"></ol>
+    <button class="btn btn-ghost" id="clearHistory" type="button" style="margin-top:1.5rem">Clear history</button>
+  </section>
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <p>Quant-Crosschecker is a class project for RESECON 490AI, Fall 2026.</p>
+    <p>Demo data: the courses, problems and nickname are invented. Your work stays in this browser and is never sent anywhere.</p>
+  </div>
+</footer>
+<script src="./data.js"></script>
+<script src="./store.js"></script>
+<script src="./app.js"></script>
+</body>
+</html>

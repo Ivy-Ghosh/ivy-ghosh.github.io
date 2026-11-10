@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Check my work: Quant-Crosschecker</title>
+<meta name="description" content="Write your steps one per line and see the first one that slipped, with why and what to try next.">
+<meta name="theme-color" content="#0E0C0A">
+<meta property="og:title" content="Check my work: Quant-Crosschecker">
+<meta property="og:description" content="Write your steps one per line and see the first one that slipped, with why and what to try next.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23E8DCC6'/%3E%3Cpath d='M8 17l5 5L24 10' fill='none' stroke='%237A4A28' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Schibsted+Grotesk:wght@400;700;800&display=swap">
+<link rel="stylesheet" href="./styles.css">
+</head>
+<body data-page="check">
+<header class="site-header">
+  <div class="wrap">
+    <a class="wordmark" href="./index.html">
+      <svg width="24" height="24" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" fill="#E8DCC6"/><path d="M8 17l5 5L24 10" fill="none" stroke="#7A4A28" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Quant-Crosschecker
+    </a>
+    <nav class="site-nav" aria-label="Main">
+      <ul>
+        <li><a href="index.html">About</a></li>
+        <li><a href="how.html">How to use</a></li>
+        <li><a href="context.html">Context</a></li>
+        <li><a href="check.html">Check work</a></li>
+        <li><a href="profile.html">Profile</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<main class="wrap">
+  <div class="page-title">
+    <h1>Check my work</h1>
+  </div>
+  <div class="check-grid">
+    <section aria-labelledby="problem-label">
+      <div class="field">
+        <label id="problem-label" for="problem">Problem</label>
+        <select id="problem"></select>
+      </div>
+      <p class="prompt" id="problemText"></p>
+      <div class="field" id="ownProblem" hidden>
+        <label for="ownText">Your problem (optional)</label>
+        <textarea id="ownText" rows="3" placeholder="e.g. Simplify 2(x + 3) − 4"></textarea>
+      </div>
+      <p class="note-line" id="coverageNote"></p>
+      <details class="upload">
+        <summary>Upload a page</summary>
+        <label class="visually-hidden" for="upload">Photo or PDF of your work</label>
+        <input type="file" id="upload" accept="image/*,.pdf">
+        <div id="uploadPreview"></div>
+        <p class="note-line">Your file stays on this laptop. This version can't read handwriting or PDFs on its own (that needs an AI model on a server), so it shows the page here while you type its lines in.</p>
+      </details>
+    </section>
+
+    <section aria-label="Your work">
+      <div class="page has-margin" id="page">
+        <p class="page-head" id="pageHead">Your work</p>
+        <p class="margin-hint" aria-hidden="true">Notes land here, next to the line that slipped.</p>
+        <ol class="lines" id="lines"></ol>
+        <div class="sweep" id="sweep" aria-hidden="true"></div>
+      </div>
+      <div class="sheet-actions btn-row">
+        <button class="btn btn-primary" id="checkBtn" type="button">Check my work</button>
+        <button class="btn btn-ghost" id="addLine" type="button">Add a line</button>
+        <button class="btn btn-ghost" id="loadSample" type="button">Load a sample attempt</button>
+      </div>
+      <div class="verdict" id="verdict" aria-live="polite"></div>
+      <div class="followup btn-row" id="followup" hidden>
+        <button class="btn btn-primary" id="gotIt" type="button">I get it now</button>
+        <button class="btn btn-ghost" id="stuck" type="button">Still stuck</button>
+        <button class="btn btn-ghost" id="showSolution" type="button" hidden>Show worked solution</button>
+      </div>
+      <div class="deeper" id="deeper" aria-live="polite"></div>
+    </section>
+  </div>
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <p>Quant-Crosschecker is a class project for RESECON 490AI, Fall 2026.</p>
+    <p>Demo data: the courses, problems and nickname are invented. Your work stays in this browser and is never sent anywhere.</p>
+  </div>
+</footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/12.4.2/math.min.js"></script>
+<script src="./checker.js"></script>
+<script src="./data.js"></script>
+<script src="./store.js"></script>
+<script src="./app.js"></script>
+</body>
+</html>
