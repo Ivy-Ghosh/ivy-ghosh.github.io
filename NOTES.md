@@ -1,46 +1,34 @@
-# NOTES: Quant-Crosschecker
+# NOTES: course website
 
-## Design decisions (Oct 27, 2026)
-- **Idea:** the exam blue-book page is the stage. The student's own lines stay; feedback is written
-  in the margin, pinned to the line where it slipped. (Competitor test: Photomath/Chegg show their
-  own solution, not a marked-up version of yours.)
-- **Apple-launch feel:** one object (the beige page) lit on a dark stage, huge short headlines,
-  one claim per screen on the home page.
-- **Colors (from the brief):** black ground, off-white text, beige paper, brown margin pen.
-  Bold grotesk type (Schibsted Grotesk) instead of a serif, to avoid the "cream + clay + serif" AI look.
-  IBM Plex Mono only for math lines.
-- **Dark mode:** chosen because the site gets used late at night before quizzes.
-- **Playfulness 3:** warm praise when right ("Every line holds. Clean work."), calm and direct when wrong.
-- **Motion:** one signature moment, the sweep down the page that stops at the slipped line.
-- **No plagiarism:** worked solutions unlock only after a check and two "Still stuck" presses.
-- **Honest limits:** checker is real math (math.js); uploads are shown but not read; courses are demo.
+## Design decisions (Nov 5, 2026)
+- **Ivy's choices:** draft boxes with her own interview quotes (no AI-written narrative); post the
+  current résumé PDF as-is (transcript stays out); Japanese stationery notebook look.
+- **Idea:** a grid-paper study notebook is the layout. Pages sit on a 24 px grid, navigation is a row
+  of index tabs, key phrases get a highlighter swipe, and short notes sit in a margin column.
+- **Palette:** cool white paper `#FAFBF8`, pale blue grid `#DCE5EC`, gel-pen ink `#1F2633`, marker teal
+  `#0E6E6A` (public), marker plum `#8A3B6B` (private), highlighter `#F3E35A` (only behind text).
+  Avoided cream paper + serif (the stock "AI editorial" look).
+- **Type:** Zen Kaku Gothic New for everything; Klee One (handwriting) for margin notes only.
+- **The one live thing:** the QCEW chart. Marker buttons switch Both / Public / Private; tap a year
+  (or use arrow keys) for the exact count, share and change from the year before.
+- **Motion:** one moment. The lines draw like a pen stroke the first time the chart is seen;
+  off with reduced motion.
+- **Honesty:** y-axis does not start at zero, and the source note says so. 2025 flagged as possibly
+  preliminary. Report and slides show "posting by" dates, not fake links.
 
 ## Changelog
-- 2026-10-27: First version. Five pages, six demo problems, step checker. Tested 23 checker cases
-  (all correct), the core loop in the browser, saved state across refresh, and layouts at
-  390 / 768 / 1440 px with no console errors. Fixed: hidden elements showing, extra page height
-  at tablet width, nav wrapping on phones, hero headline shortened to two lines.
+- 2026-11-05: First version. Five pages + Crosschecker copy + résumé PDF. Checked at 375, 768 and
+  1440 px: no horizontal scroll, no console errors, all local links resolve, chart readout matches the
+  CSV (e.g. 2020 total 2,927,626, down 3.4% from 2019). Fixed: name styled as a tab and tabs wrapping
+  on phones; removed margin notes that spoke for Ivy.
+- Testing note: the app's local server can't read the Desktop (macOS privacy), so the site was
+  tested from a copy in Claude's scratchpad. `.claude/launch.json` points at that temporary copy.
 
-- 2026-10-27, round 1 (design-director critique against skill Sections 5 and 4.3):
-  1. Copy overclaimed: it said hints adapt to your class; they don't. Context only flags uncovered
-     problems. Rewrote the home claim, Context intro and Check-page note to say exactly that.
-  2. Home had four near-empty full-screen text slides with no proof. Now three claims, each beside
-     real proof: actual checker messages, the Context checklist, and the unlock order.
-  3. Contrast below the floor: field/button borders 1.5–1.9:1 (now 3.9:1), placeholders 3.6:1
-     (now 5.7:1), brown on the slipped-line tint 4.3:1 (note now has a paper background).
-  4. Profile used banned big-number stat tiles (showing 0/0/0). Now one plain sentence, hidden at zero.
-  5. Desktop margin column was blank before a check. Now it says "Notes land here, next to the
-     line that slipped."
-  Also: tabular numbers removed outside line numbers (the font widened "." and ":").
-
-- 2026-10-27, round 2 (Ivy): How to use page only. Body text, table and "How the checking works"
-  went from thin (400) grey-beige to medium/semibold (500–700) in a brighter warm beige (#D9CDBB),
-  so the page reads with more presence but stays sober. Scoped with body[data-page="how"];
-  only how.html loads the extra font weights. No other page changed.
-
-- 2026-10-27, round 2 undone (Ivy's request): removed the page-scoped How to use styles from
-  styles.css and restored how.html's font link to weights 400;700;800. The site is back to the
-  round 1 version. (No git repository here, so this was reversed by hand from this log.)
+- 2026-11-10: Matched the Oct 29 rules: résumé renamed to assets/resume.pdf (lowercase),
+  unfinished items tagged [PLACEHOLDER]. Ivy chose to keep her GPA visible on the posted résumé,
+  even though the Oct 29 sheet suggests leaving it off.
 
 ## Next
-- Ivy to try it and give round-1 feedback.
+- Ivy writes the About paragraph and the 150–250 word project summary (before M4, Nov 12).
+- Add the report PDF, slides and more charts at M6. Résumé with QR code at M5 (Nov 19).
+- Publish on GitHub Pages when ready.

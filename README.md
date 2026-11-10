@@ -1,43 +1,36 @@
-# Quant-Crosschecker
+# Ivy Ghosh — course website (RESECON 490AI, Fall 2026)
 
-A study site for UMass students: type the steps of a math, stats or econ problem one per line,
-and it finds the first line that doesn't follow from the one before, with what went wrong, why,
-and what to try next. Built in class (RESECON 490AI, S15, Oct 27, 2026) with Claude Code and the
-anti-slop-web skill.
+The public website for my final project, "AI and the Future of My Industry" (U.S. colleges and
+universities, NAICS 611310). Everything in this folder is public. Never put private files here.
 
 ## How to open it
-Double-click `index.html`, or run a local server in this folder and open http://localhost:8000:
-
-```
-ruby -run -e httpd . -p 8000
-```
-
-(Python isn't installed on this laptop, so Ruby's built-in server is used.)
-The checker downloads one library (math.js 12.4.2) from cdnjs, so it needs internet the first time.
+Double-click `index.html`. The fonts load from Google Fonts, so it looks best with internet on.
 
 ## Pages
 | File | What it is |
 |---|---|
-| `index.html` | About: what it does and what it can't do yet |
-| `how.html` | How to use it, and how to type math it can read |
-| `context.html` | Pick your course and the topics covered so far |
-| `check.html` | The checker: problem, upload, your lines, margin notes |
-| `profile.html` | Nickname and check history (no login) |
+| `index.html` | Home: who I am, plus the live jobs chart |
+| `about.html` | About: education, experience, skills (About paragraph is a **draft** for me to rewrite) |
+| `projects.html` | Projects: the final project (summary is a **draft** for me to write), Quant-Crosschecker, trust-game paper |
+| `resume.html` | Résumé: PDF viewer and download (`assets/resume.pdf`) |
+| `contact.html` | Email and LinkedIn (no form: a form needs a server) |
+| `crosschecker/` | A copy of my Oct 27 class build, Quant-Crosschecker |
 
 ## Code
 | File | Job |
 |---|---|
-| `checker.js` | The step checker. Plugs random numbers into each line and the line before it (math.js). Expressions must agree; equations must keep the same solution. |
-| `data.js` | Demo courses, topics and six practice problems with hand-written hints and worked solutions |
-| `store.js` | Saves nickname, course, drafts and history in this browser (localStorage) |
-| `app.js` | Page behaviour: the sweep, margin notes, praise/support words, hints |
-| `styles.css` | Design tokens at the top, then layout and components |
+| `styles.css` | Design tokens at the top (colors, fonts, sizes), then layout and components |
+| `data.js` | The 12 years of QCEW job counts used in the chart |
+| `chart.js` | Draws the chart as plain SVG; marker buttons, tap/arrow-key year readout, pen-draw animation |
 
-## What is real vs. demo
-- **Real:** the checking of arithmetic and algebra steps (it really computes; nothing is scripted).
-- **Demo:** the three courses, their topics, the six problems and their hints, and the random nickname.
-- **Not built:** reading uploaded photos/PDFs, solving brand-new problems, using real course materials.
-  These need an AI model behind a server (with the API key kept secret on the server), plus the
-  course materials for retrieval (RAG).
+## What is real vs. draft
+- **Real:** chart numbers. They are BLS QCEW annual averages for NAICS 611310, U.S. totals, summed from
+  `project/data/QCEW_611310_US_extract_2014_2025.csv` (public = federal + state + local).
+  Résumé facts and contact details come from my résumé.
+- **Draft:** text inside the dashed "Draft" boxes. These are quotes from my Oct 15 interview and a
+  checklist. I replace them with my own words.
+- **Not posted yet:** report PDF (by Dec 3) and slides (by Dec 8).
 
-Nothing leaves the browser. There are no keys, passwords or personal data in this folder.
+## To publish (GitHub Pages, later)
+Make a public repo, upload the *contents* of this folder (so `index.html` is at the top), then
+Settings → Pages → Deploy from a branch → main / (root). All paths are relative, so it works there.
